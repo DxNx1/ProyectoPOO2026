@@ -41,4 +41,36 @@ public class InventarioLetras {
             throw new IllegalArgumentException("Carácter no alfabético: " + letra);
         }
     }
+    public void set(char letra, int valor) {
+        char letraMin = Character.toLowerCase(letra);
+        if (letraMin < 'a' || letraMin > 'z' || valor < 0) {
+            throw new IllegalArgumentException("Carácter no alfabético o valor negativo: " + letra + valor);
+        } else {
+            int indice = letraMin - 'a';
+            totalCount = totalCount - inventario[indice] + valor;
+            if (inventario[indice] == 0 && valor > 0) {
+                nonZeroCount++;
+            }
+            if (inventario[indice] > 0 && valor == 0) {
+                nonZeroCount--;
+            }
+            inventario[indice] = valor;
+        }
+    }
+
+    public String toString() {
+        String resultado = "[";
+        for (int i = 0; i < 26; i++){
+            if (inventario[i] > 0){
+                int aux = inventario[i];
+                char letra = (char) ('a' + i);
+                for (int j = 0; j < aux; j++){
+                    resultado += letra;
+                }
+            }
+        }
+        resultado += "]";
+        return resultado;
+    }
+
 }

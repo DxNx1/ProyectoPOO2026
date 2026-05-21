@@ -4,6 +4,10 @@ public class Main {
         System.out.println("size: " + inv.size());
         System.out.println("isEmpty: " + inv.isEmpty());
         System.out.println("get(o): " + inv.get('o'));
-        System.out.println("get(5): " + inv.get('5'));
+
+        inv.set('o', 5);
+        System.out.println("get('o') despues: " + inv.get('o'));
+        System.out.println("size despues: " + inv.size());
+        System.out.println(inv.toString());
     }
 }
