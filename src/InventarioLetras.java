@@ -88,8 +88,8 @@ public class InventarioLetras {
         char letraMin = Character.toLowerCase(letra);
         int indice = letraMin - 'a';
         indice = (indice - 3 + 26) % 26;
-        char enc = (char) ('a' + indice);
-        return enc;
+        char desEnc = (char) ('a' + indice);
+        return desEnc;
     }
     //metodo que encriptara una palabra con un determinado numero de casillas a desplazar
     public String encriptarPalabra(String palabra, int desplazamiento) {
@@ -98,8 +98,8 @@ public class InventarioLetras {
             char letraMin = Character.toLowerCase(palabra.charAt(i));
             int indice = letraMin - 'a';
             indice = (indice + desplazamiento) % 26;
-            char enc = (char) ('a' + indice);
-            resultado += enc;
+            char encPal = (char) ('a' + indice);
+            resultado += encPal;
         }
         return resultado;
     }
@@ -110,8 +110,8 @@ public class InventarioLetras {
             char letraMin = Character.toLowerCase(palabra.charAt(i));
             int indice = letraMin - 'a';
             indice = (indice - desplazamiento + 26) % 26;
-            char enc = (char) ('a' + indice);
-            resultado += enc;
+            char desEncPal = (char) ('a' + indice);
+            resultado += desEncPal;
         }
         return resultado;
     }
